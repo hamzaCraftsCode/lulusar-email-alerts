@@ -1,8 +1,21 @@
-This is repo contains code that can be used as a seperate module in any roject. The code is used to send email alerts to the email present in the config file.
+# Email Alerts Module
 
+This repository contains code that can be used as a separate module in any project for sending email alerts.
 
+## email_alerts.py
 
-The config file here is a sample but you must create one in your project.
+The `email_alerts.py` file contains the code which is used to send email alerts to the email addresses specified in the configuration file.
 
+## Config File
 
-Both config and email_alerts file should be in the same directory
+The `config.yml` file provided here is a sample. You must create your own `config.yml` file in your project directory.
+
+### Sample `config.yml`
+
+```yaml
+EMAIL: 'your_email@example.com'
+PASSWORD: 'your_email_password'
+ALERTS_ENABLED: true
+RECEIVERS:
+  - 'receiver1@example.com'
+  - 'receiver2@example.com'
