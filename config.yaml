@@ -1,2 +1,6 @@
 PASSWORD: "password123"
 EMAIL: "tech@data-pilot.com"
+ALERTS_ENABLED: true
+RECEIVERS:
+  - 'receiver1@example.com'
+  - 'receiver2@example.com'

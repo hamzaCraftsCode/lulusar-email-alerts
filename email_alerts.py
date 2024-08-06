@@ -17,12 +17,13 @@ def load_config(yaml_file='config.yaml'):
     password = config.get('PASSWORD')
     sender_email = config.get('EMAIL')
     alerts_enabled = config.get('ALERTS_ENABLED', True)
-    return sender_email, password, alerts_enabled
+    recipients = config.get('RECEIVERS', [])
+    return sender_email, password, alerts_enabled, recipients
 
 # Function to send email
-def send_email(subject, body, recipients, yaml_file='config.yaml'):
+def send_email(subject, body, yaml_file='config.yaml'):
     """Sends an email to multiple recipients."""
-    sender_email, password, alerts_enabled = load_config(yaml_file)
+    sender_email, password, alerts_enabled, recipients = load_config(yaml_file)
     
     if not alerts_enabled:
         print("Alerts are disabled.")
